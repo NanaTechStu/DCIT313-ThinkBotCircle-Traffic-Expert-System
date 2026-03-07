@@ -13,5 +13,5 @@ Rule-based Expert System for Adaptive Traffic Signal Control in Accra
 ## Project Purpose
 This is a rule-based expert system for adaptive traffic signal control in Accra. The system uses production rules (IF-THEN) to make intelligent decisions about traffic light timings, taking into account traffic density, time of day, weather conditions (dry/rain), and pedestrian presence. It mimics a human traffic expert to reduce congestion and improve safety.
 
-Built for DCIT 313 - Introduction to Artificial Intelligence (University of Ghana).
+Built for DCIT 313 - Introduction to Artificial Intelligence, L300, 2026 (University of Ghana).
 
