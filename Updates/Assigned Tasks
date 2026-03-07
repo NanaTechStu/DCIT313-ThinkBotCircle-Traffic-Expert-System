@@ -1,14 +1,23 @@
 From PM - Nana Adwoa Aforo Osei [Project Manager] (22028283)
 
+
+
+
+(some time)
+
 (will edit later)
 Bilson Priscilla Essirifua [Knowledge Engineer] (22015128)
 Adu Selina Odoi [Knowledge Engineer] (22013807)
 
 
 
+
 (3/7/2026)
 
 Stephen Edem Kwame Doe-lawson [Programmer] (22045257)
+You are the Prolog Owner
+Take the rules from the Knowledge Base document and turn them into correct SWI-Prolog code.
+You can run/test alone using SWI-Prolog.
 
 Adwoa Pokua [Programmer] (22235277)
 You are the Input Collector
@@ -26,6 +35,5 @@ You are to do Output + Explanation + Testing
 You are to format the final output nicely, add simple explanation (“Rule 8 fired because…”), and create 8 test scenarios in Python.
 You can work on formatting and tests independently.
 
-Again, you have until end of Wednesday to finish.
 
 
