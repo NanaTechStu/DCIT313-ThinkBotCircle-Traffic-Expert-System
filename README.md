@@ -3,11 +3,13 @@ Rule-based Expert System for Adaptive Traffic Signal Control in Accra
 
 ## Group Members
 - Nana Adwoa Aforo Osei [Project Manager] (22028283)
-- Elliot Elorm Nutsuakor [Programmer] (22170217)
+
 - Bilson Priscilla Essirifua [Knowledge Engineer] (22015128)
-- Adwoa Pokua [Programmer] (22235277)
 - Adu Selina Odoi [Knowledge Engineer] (22013807)
+
+- Adwoa Pokua [Programmer] (22235277)
 - Aryee Emerald [Programmer] (22033619)
+- Elliot Elorm Nutsuakor [Programmer] (22170217)
 - Stephen Edem Kwame Doe-lawson [Programmer] (22045257)
 
 ## Project Purpose
