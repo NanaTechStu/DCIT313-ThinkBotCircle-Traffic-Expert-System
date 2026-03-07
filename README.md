@@ -1,8 +1,6 @@
 # DCIT313-ThinkBotCircle-Traffic-Expert-System
 Rule-based Expert System for Adaptive Traffic Signal Control in Accra
 
-# DCIT 313 - Expert System Project
-
 ## Group Members
 - Nana Adwoa Aforo Osei [Project Manager] (22028283)
 - Elliot Elorm Nutsuakor [Programmer] (22170217)
