@@ -5,13 +5,13 @@ From PM - Nana Adwoa Aforo Osei [Project Manager] (22028283)
 
 (3/2/2026)
 
-Bilson Priscilla Essirifua [Knowledge Engineer] (22015128)
+Bilson Priscilla Essirifua [Knowledge Engineer] (22015128) Priscilla-tech
 You are in charge of researching and providing your partner 'the brain of the system'. Here are some ideas to help you:
 -  Research simple traffic rules and weather effects in Accra/Ghana.
 -  Look at: Ghana Highway Code (basic signal rules), news/articles about rain causing accidents/delays in Accra, common traffic police practices.
 You can use Google, PDFs from MTTD (Motor Traffic & Transport Department), or just logical rules based on what drivers do.
 
-Adu Selina Odoi [Knowledge Engineer] (22013807)
+Adu Selina Odoi [Knowledge Engineer] (22013807) SelinaAduOdoi
 You are to take what she provides you and make pseduo code the programmers will use. Here's an idea for you:
 Write 15–25 clear if-then production rules.
 Make them realistic and include weather.
@@ -21,23 +21,23 @@ Make them realistic and include weather.
 
 (3/7/2026)
 
-Stephen Edem Kwame Doe-lawson [Programmer] (22045257)
+Stephen Edem Kwame Doe-lawson [Programmer] (22045257) Dxcraig
 You are the Prolog Owner
 Take the rules from the Knowledge Base document and turn them into correct SWI-Prolog code.
 You can run/test alone using SWI-Prolog.
 
-Adwoa Pokua [Programmer] (22235277)
+Adwoa Pokua [Programmer] (22235277) Adwoa-p
 You are the Input Collector
 Write Python code that asks the user for all the inputs and returns them as a dictionary.
 You can run/test completely alone in Python.
 
-Aryee Emerald [Programmer] (22033619)
+Aryee Emerald [Programmer] (22033619) em-wrld
 You are the Inference Engine
 You are to load the Prolog file and write functions that query it and return actions in Python.
 You can run/test early with dummy data as you wait for [Stephen Edem Kwame Doe-lawson [Programmer] (22045257)].
 Communicate with each other on any issues that can delay either ones work you two need to get done.
 
-Elliot Elorm Nutsuakor [Programmer] (22170217)
+Elliot Elorm Nutsuakor [Programmer] (22170217) FFSElliot
 You are to do Output + Explanation + Testing
 You are to format the final output nicely, add simple explanation (“Rule 8 fired because…”), and create 8 test scenarios in Python.
 You can work on formatting and tests independently.
