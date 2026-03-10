@@ -33,7 +33,8 @@ priority_value(density,    2).
 priority_value(time,       3).
 priority_value(weather,    4).
 priority_value(pedestrian, 5).
-priority_value(emergency,  6).
+priority_value(combined,   6).   % multi-condition rules that need to beat single-category rules
+priority_value(emergency,  7).
 
 
 % ─── Additive Actions ─────────────────────────────────────────────────────────
