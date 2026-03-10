@@ -53,18 +53,19 @@ handle_evaluate(Request) :-
     maplist(action_to_item, Actions, ActionItems),
     reply_html_page(
         [ title('Traffic Expert System'),
+          link([rel=stylesheet, href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css']),
           link([rel=stylesheet, type='text/css', href='/static/style.css'])
         ],
         [ div([class='container'],
-              [ p(a([href='/'], '← New Evaluation')),
-                h1('Traffic Signal Decision'),
+              [ p(a([href='/'], [i([class='fa-solid fa-arrow-left'],[]), ' New Evaluation'])),
+                h1([i([class='fa-solid fa-traffic-light'],[]), ' Traffic Signal Decision']),
                 div([class='section'],
-                    [ h2('Input Conditions'),
+                    [ h2([i([class='fa-solid fa-sliders'],[]), ' Input Conditions']),
                       table([class='input-table'],
                             [ tr([th('Variable'), th('Value')]) | InputRows ])
                     ]),
                 div([class='section'],
-                    [ h2('Recommended Actions'),
+                    [ h2([i([class='fa-solid fa-list-check'],[]), ' Recommended Actions']),
                       ul([class='action-list'], ActionItems)
                     ])
               ])
@@ -76,9 +77,10 @@ handle_evaluate(Request) :-
 
 input_to_row(K=V, tr([td(K), td(V)])).
 
-action_to_item(Action, li([class=Class], Label)) :-
+action_to_item(Action, li([class=Class], [i([class=Icon],[]), ' ', Label])) :-
     action_label(Action, Label),
-    action_css_class(Action, Class).
+    action_css_class(Action, Class),
+    action_icon(Action, Icon).
 
 %% action_label(+Action, -Label)
 action_label(maintain_green(N),           L) :- format(atom(L), 'Maintain Green for ~w seconds (default)', [N]).
@@ -92,6 +94,19 @@ action_label(give_emergency_priority,     'Give Emergency Vehicle Priority').
 action_label(activate_pedestrian_crossing,'Activate Pedestrian Crossing').
 action_label(display_warning(Msg),        L) :- format(atom(L), 'Display Warning: ~w', [Msg]).
 action_label(no_action,                   'No matching rules — maintain current signal state').
+
+%% action_icon(+Action, -FontAwesomeClass)
+action_icon(maintain_green(_),            'fa-solid fa-circle-check').
+action_icon(maintain_red(_),              'fa-solid fa-circle-stop').
+action_icon(extend_green(_),              'fa-solid fa-clock-rotate-left').
+action_icon(extend_red(_),               'fa-solid fa-hourglass-half').
+action_icon(extend_yellow(_),            'fa-solid fa-hourglass-half').
+action_icon(switch_to_green,             'fa-solid fa-toggle-on').
+action_icon(switch_to_red,               'fa-solid fa-toggle-off').
+action_icon(give_emergency_priority,     'fa-solid fa-truck-medical').
+action_icon(activate_pedestrian_crossing,'fa-solid fa-person-walking').
+action_icon(display_warning(_),          'fa-solid fa-triangle-exclamation').
+action_icon(no_action,                   'fa-solid fa-circle-info').
 
 %% action_css_class(+Action, -CSSClass)
 action_css_class(give_emergency_priority,      emergency).
