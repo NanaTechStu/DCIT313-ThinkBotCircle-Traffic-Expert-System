@@ -40,30 +40,31 @@ rule(6, density, [density=high, light=red], switch_to_green).
 % Rule 7: Light rain + yellow → delay the switch to give drivers reaction time.
 rule(7, weather, [weather=light_rain, light=yellow], extend_yellow(5)).
 
-% Rule 8: Heavy rain + high density → extra green time (longer reaction times).
-rule(8, weather, [weather=heavy_rain, density=high], extend_green(25)).
+% Rule 8: Heavy rain + high density + green light → extra green time (longer reaction times).
+%          light=green added: extend_green only applies when green is active.
+rule(8, weather, [weather=heavy_rain, density=high, light=green], extend_green(25)).
 
 % Rule 9: Heavy rain (any conditions) → always warn drivers. [ADDITIVE]
 rule(9, weather, [weather=heavy_rain], display_warning('Slippery road; Drive carefully')).
 
-% Rule 10: Cloudy weather + medium density → standard green timing.
-rule(10, weather, [weather=cloudy, density=medium], maintain_green(30)).
+% Rule 10: Cloudy weather + medium density + green light → standard green timing.
+rule(10, weather, [weather=cloudy, density=medium, light=green], maintain_green(30)).
 
 
 % ─── D. Time-Based Safety ─────────────────────────────────────────────────────
-% Rule 11: Night + low density → standard green (no need to rush in quiet hours).
-rule(11, time, [time=night, density=low], maintain_green(30)).
+% Rule 11: Night + low density + green light → standard green (quiet night traffic).
+rule(11, time, [time=night, density=low, light=green], maintain_green(30)).
 
-% Rule 12: Night + pedestrian present → extend red to allow safe crossing.
-rule(12, time, [time=night, pedestrian=yes], extend_red(10)).
+% Rule 12: Night + pedestrian present + red light → extend red for safe crossing.
+rule(12, time, [time=night, pedestrian=yes, light=red], extend_red(10)).
 
 
 % ─── E. Pedestrian Protection ────────────────────────────────────────────────
 % Rule 13: Pedestrian at red light → activate crossing signal. [ADDITIVE]
 rule(13, pedestrian, [pedestrian=yes, light=red], activate_pedestrian_crossing).
 
-% Rule 14: Pedestrian + heavy rain → extra red time for safe crossing.
-rule(14, pedestrian, [pedestrian=yes, weather=heavy_rain], extend_red(15)).
+% Rule 14: Pedestrian + heavy rain + red light → extra red time for safe crossing.
+rule(14, pedestrian, [pedestrian=yes, weather=heavy_rain, light=red], extend_red(15)).
 
 
 % ─── F. Emergency Vehicle Priority ───────────────────────────────────────────
@@ -75,16 +76,17 @@ rule(16, emergency, [emergency=yes, light=red], switch_to_green).
 
 
 % ─── G. Combined Intelligent Rules ───────────────────────────────────────────
-% Rule 17: Heavy rain + high density + daytime → maximum green extension.
-%          More specific than Rule 8; wins over it when all three conditions hold.
-rule(17, weather, [weather=heavy_rain, density=high, time=day], extend_green(35)).
+% Rule 17: Heavy rain + high density + daytime + green light → maximum green extension.
+%          More specific than Rule 8 (4 vs 3 conditions); wins over it when all hold.
+rule(17, weather, [weather=heavy_rain, density=high, time=day, light=green], extend_green(35)).
 
-% Rule 18: Low density + daytime → standard green (quiet daytime traffic).
-rule(18, basic, [density=low, time=day], maintain_green(30)).
+% Rule 18: Low density + daytime + green light → standard green (quiet daytime traffic).
+rule(18, basic, [density=low, time=day, light=green], maintain_green(30)).
 
-% Rule 19: Dry weather + medium density → standard green (no adverse conditions).
-rule(19, weather, [weather=dry, density=medium], maintain_green(30)).
+% Rule 19: Dry weather + medium density + green light → standard green (no adverse conditions).
+rule(19, weather, [weather=dry, density=medium, light=green], maintain_green(30)).
 
 % Rule 20: Heavy rain + pedestrian + red → significant red extension for safety.
-%          More specific than Rule 14; wins over it when all three conditions hold.
-rule(20, pedestrian, [weather=heavy_rain, pedestrian=yes, light=red], extend_red(25)).
+%          Uses 'combined' priority (above pedestrian) so it beats Rule 14 when
+%          all three conditions hold, since both rules now have 3 conditions.
+rule(20, combined, [weather=heavy_rain, pedestrian=yes, light=red], extend_red(25)).
