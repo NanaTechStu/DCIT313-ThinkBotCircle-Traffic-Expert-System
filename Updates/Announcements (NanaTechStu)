@@ -89,3 +89,46 @@ Remember everyone, we hope to wrap up end of Wednesday, do any edits or commits 
 (3/10/2026, 20:31)
 
 
+
+
+
+
+Hello all, I am still quite weak so I will do my final review on Friday morning. Use this time to confirm the following, as I believe you have all read the protocol and know what you are tasked to do and where to post it on GitHub for full marks.
+
+**Repo link:** https://github.com/NanaTechStu/DCIT313-ThinkBotCircle-Traffic-Expert-System
+
+**What they expect to see by Thursday night (for full marks):**
+
+Bilson Priscilla Essirifua [Knowledge Engineer] (22015128) = Priscilla-tech
+Adu Selina Odoi [Knowledge Engineer] (22013807) = SelinaAduOdoi 
+(Knowledge Engineers):  
+I said you were responsible for the documentation and pseudocode. Please make sure you have committed:  
+* `/knowledge_base/pseudocode.txt` (using the clean 17-rule version we finalised)  
+* `/docs/knowledge_engineering_report.pdf` (the final updated document with Knowledge Acquisition section)
+
+Stephen Edem Kwame Doe-lawson [Programmer] (22045257) = Dxcraig 
+(Prolog Owner):  
+I tasked you with the core logic in Prolog. Please commit:  
+* `/knowledge_base/traffic_rules.pl` (using the final updated files, file name can be anything related)
+
+Adwoa Pokua [Programmer] (22235277) = Adwoa-p
+(Input Collector):  
+I assigned you to the python user input. Please commit:  
+* `/interface/input_collector.py` (your menu-based input file, your file name can be anything related)
+
+Aryee Emerald [Programmer] (22033619) = em-wrld 
+(Inference Engine):  
+I assigned you with connecting to the Prolog file @+233 25 601 9932 is to do. Please commit:  
+* `/interface/2_inference.py` (the pyswip query file, file can be any name, must refer to @+233 25 601 9932 's file)
+
+Elliot Elorm Nutsuakor [Programmer] (22170217) = FFSElliot 
+(Output + Explanation + Testing):  
+I assigned you the task of producing a nice output and tests. Please commit:  
+* `/interface/3_output.py` (the formatted results + explanations, file can be anything related)
+  
+I will combine everything into `/interface/main.py` and do the final clean-up on Friday morning.
+
+Please push whatever you have tonight so I can review on Friday.
+
+Pseudocode: https://docs.google.com/document/d/1OXIaMg5vkkMgylDb567AcIycTG-YJluVSD3_GJpTYNs/edit?usp=sharing
+(3/12/2026, 19:15)
