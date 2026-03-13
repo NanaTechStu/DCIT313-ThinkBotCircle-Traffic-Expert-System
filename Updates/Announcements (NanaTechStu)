@@ -1,0 +1,134 @@
+Okay, let's start something!
+Everyone will share their work here (please have all our work be under 2GB please): https://drive.google.com/drive/folders/1nxj_05bdMpDEFrLWt1j5FYBUi6cYuVAP?usp=sharing
+(3/2/2026, 10:44am)
+
+
+Bilson Priscilla Essirifua [Knowledge Engineer] (22015128)
+Adu Selina Odoi [Knowledge Engineer] (22013807)
+You have until the end of Friday so the programmers can start their work.
+Put all rules in a shared Google Doc (numbered list with your names in the parts you've done).
+For each rule: write the IF-THEN, explain briefly why it makes sense, and note the source (e.g. "common sense" or "from news about rain accidents").
+Categorize them if possible: basic rules, weather rules, safety/pedestrian rules, etc.
+https://drive.google.com/drive/folders/1nxj_05bdMpDEFrLWt1j5FYBUi6cYuVAP?usp=sharing
+(3/2/2026, 10:51am)
+
+
+I'm free any of these times
+Anyone can pick any multiple of times they are free, according to them.
+The one with the most votes is the time we meet.
+I've also stated when I'll be free for 'other times' in the history of the chat.
+(3/3/2026, 10:36am)
+
+
+Please, the drive has been updated!
+I encourage all of you to learn what we all are doing.
+If anyone finds any issues, please feel free to share before the work gets pushed to Github.
+https://drive.google.com/drive/folders/1nxj_05bdMpDEFrLWt1j5FYBUi6cYuVAP?usp=sharing
+(3/4/2026, 10:46pm)
+
+
+Reply to this message or in my DMs with your exact GitHub username (e.g. johnsmith123)
+I will add all of you as collaborators with full write access. 
+Once I add you, you’ll get an email invite — just click 'Accept.'
+(3/4/2026, 12:17pm)
+
+
+Programmers, please prepare as you will have start of tomorrow to end of Wednesday to complete your assigned work.
+Will let you know tomorrow morning.
+(3/6/2026, 12:04)
+
+
+Okay some more edits may or may not be needed for the pseudo code but as to not waste time, I will assign roles now.
+Here is the file you will reference (not that it may be incomplete and edits will eb made in the future.):
+https://docs.google.com/document/d/1eAr8yLRDVjqYN4nqgz4ecfKr0wc9iRdC/edit?usp=sharing&ouid=101907612451416160109&rtpof=true&sd=true
+For help understanding the work, ask either Knowledge Experts:
+Bilson Priscilla Essirifua [Knowledge Engineer] (22015128)
+Adu Selina Odoi [Knowledge Engineer] (22013807)
+(3/7/2026, 07:59)
+
+
+Here are the Google Docs for extra editting before everything get's pushed to Github:
+https://drive.google.com/drive/folders/1nxj_05bdMpDEFrLWt1j5FYBUi6cYuVAP?usp=sharing
+(3/7/2026, 09:17)
+
+
+Also, if you know how to use Github and can update within it as well, feel free to push all your work there and Google so people who find Google Drive easier to access can still access the work.
+(3/7/2026, 14:39)
+
+
+Please, I've checked both the google drive and github. Have any programmers finished any part of their work?
+(3/9/2026, 10:23)
+
+
+Okay, to the Knowledge Experts, have the changes been made or you accept them and want to push everything to Github as proof of your work now?
+(3/9/2026, 10:27)
+
+
+Please, the Knowledge Base has been updated. The pseudocode will be updated later. Please use it with making your code for now.
+(3/9/2026, 15:54)
+
+
+Sorry all, I have not been feeling good since 313, so I will trust you will each do and submit your work properly today without me.
+I will look at what you've done when I feel better
+(3/12/2026, 09:45)
+
+
+
+I plan for Thursday to be where we all update Github with our individual works, make any needed corrections on that last day and prepare for the presentation (he will communicate how the presentation should be later on, he said when I asked)
+We hope to have all of our Github work pushed properly by 11pm Thursday. I will fill in after 11pm aanything to prepare for Friday where need be.
+(3/9/2026, 16:05)
+
+
+Also the Google pseudocode has been update, all of you should look at it as to not use the old work we did:
+https://docs.google.com/document/d/1OXIaMg5vkkMgylDb567AcIycTG-YJluVSD3_GJpTYNs/edit?usp=sharing
+(3/10/2026, 11:42)
+
+
+@all
+Remember everyone, we hope to wrap up end of Wednesday, do any edits or commits to Github by Thurday 11pm so we are prepared for Friday
+(3/10/2026, 20:31)
+
+
+
+
+
+
+Hello all, I am still quite weak so I will do my final review on Friday morning. Use this time to confirm the following, as I believe you have all read the protocol and know what you are tasked to do and where to post it on GitHub for full marks.
+
+**Repo link:** https://github.com/NanaTechStu/DCIT313-ThinkBotCircle-Traffic-Expert-System
+
+**What they expect to see by Thursday night (for full marks):**
+
+Bilson Priscilla Essirifua [Knowledge Engineer] (22015128) = Priscilla-tech
+Adu Selina Odoi [Knowledge Engineer] (22013807) = SelinaAduOdoi 
+(Knowledge Engineers):  
+I said you were responsible for the documentation and pseudocode. Please make sure you have committed:  
+* `/knowledge_base/pseudocode.txt` (using the clean 17-rule version we finalised)  
+* `/docs/knowledge_engineering_report.pdf` (the final updated document with Knowledge Acquisition section)
+
+Stephen Edem Kwame Doe-lawson [Programmer] (22045257) = Dxcraig 
+(Prolog Owner):  
+I tasked you with the core logic in Prolog. Please commit:  
+* `/knowledge_base/traffic_rules.pl` (using the final updated files, file name can be anything related)
+
+Adwoa Pokua [Programmer] (22235277) = Adwoa-p
+(Input Collector):  
+I assigned you to the python user input. Please commit:  
+* `/interface/input_collector.py` (your menu-based input file, your file name can be anything related)
+
+Aryee Emerald [Programmer] (22033619) = em-wrld 
+(Inference Engine):  
+I assigned you with connecting to the Prolog file @+233 25 601 9932 is to do. Please commit:  
+* `/interface/2_inference.py` (the pyswip query file, file can be any name, must refer to @+233 25 601 9932 's file)
+
+Elliot Elorm Nutsuakor [Programmer] (22170217) = FFSElliot 
+(Output + Explanation + Testing):  
+I assigned you the task of producing a nice output and tests. Please commit:  
+* `/interface/3_output.py` (the formatted results + explanations, file can be anything related)
+  
+I will combine everything into `/interface/main.py` and do the final clean-up on Friday morning.
+
+Please push whatever you have tonight so I can review on Friday.
+
+Pseudocode: https://docs.google.com/document/d/1OXIaMg5vkkMgylDb567AcIycTG-YJluVSD3_GJpTYNs/edit?usp=sharing
+(3/12/2026, 19:15)
