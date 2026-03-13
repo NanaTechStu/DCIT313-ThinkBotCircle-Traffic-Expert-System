@@ -1,0 +1,206 @@
+Pseudo-Code for Adaptive Traffic Signal Control Expert System
+=============================================================
+
+SYSTEM OVERVIEW
+This expert system controls traffic signals at a single intersection using forward
+chaining inference. The system evaluates real-time inputs against production rules
+to determine appropriate signal actions.
+
+
+INPUT VARIABLES (User/System Provided)
+  weather_condition        = {dry, light_rain, heavy_rain, cloudy}
+  traffic_density          = {low, medium, high}
+  time_of_day              = {day, night}
+  pedestrian_presence      = {yes, no}
+  current_traffic_light    = {red, yellow, green}
+
+
+OUTPUT ACTIONS
+  maintain_green(seconds)
+  extend_green(seconds)
+  maintain_red(seconds)
+  extend_red(seconds)
+  extend_yellow(seconds)
+  switch_to_green
+  switch_to_red
+  activate_pedestrian_crossing
+  display_warning(message)
+
+
+DEFAULT TIMING ASSUMPTIONS
+  Default Green Time  = 30 seconds
+  Default Yellow Time =  5 seconds
+  Default Red Time    = 30 seconds
+
+
+=============================================================
+PRODUCTION RULES (17 Rules)
+=============================================================
+
+SECTION A: BASIC SIGNAL OPERATION
+
+  RULE 1:
+    IF current_traffic_light = green AND traffic_density = low
+    THEN action = maintain_green(30)
+
+  RULE 2:
+    IF current_traffic_light = red AND traffic_density = low
+    THEN action = maintain_red(30)
+
+  RULE 3:
+    IF current_traffic_light = yellow
+    THEN action = switch_to_red
+
+
+SECTION B: TRAFFIC DENSITY ADAPTATION
+
+  RULE 4:
+    IF traffic_density = medium AND current_traffic_light = green
+    THEN action = extend_green(15)
+
+  RULE 5:
+    IF traffic_density = high AND current_traffic_light = green
+    THEN action = extend_green(20)
+
+  RULE 6:
+    IF traffic_density = high AND current_traffic_light = red
+    THEN action = switch_to_green
+
+
+SECTION C: WEATHER-BASED ADJUSTMENTS
+
+  RULE 7:
+    IF weather_condition = light_rain AND current_traffic_light = yellow
+    THEN action = extend_yellow(5)
+
+  RULE 8:
+    IF weather_condition = heavy_rain AND traffic_density = high
+    THEN action = extend_green(25)
+
+  RULE 9:
+    IF weather_condition = cloudy AND traffic_density = medium
+    THEN action = maintain_green(30)
+
+
+SECTION D: TIME-BASED SAFETY RULES
+
+  RULE 10:
+    IF time_of_day = night AND traffic_density = low
+    THEN action = maintain_green(30)
+
+  RULE 11:
+    IF time_of_day = night AND pedestrian_presence = yes
+    THEN action = extend_red(10)
+
+
+SECTION E: PEDESTRIAN PROTECTION RULES
+
+  RULE 12:
+    IF pedestrian_presence = yes AND current_traffic_light = red
+    THEN action = activate_pedestrian_crossing
+
+  RULE 13:
+    IF pedestrian_presence = yes AND weather_condition = heavy_rain
+    THEN action = extend_red(15)
+
+
+SECTION F: COMBINED INTELLIGENT RULES
+
+  RULE 14:
+    IF weather_condition = heavy_rain AND traffic_density = high AND time_of_day = day
+    THEN action = extend_green(35)
+
+  RULE 15:
+    IF traffic_density = low AND time_of_day = day
+    THEN action = maintain_green(30)
+
+  RULE 16:
+    IF weather_condition = dry AND traffic_density = medium
+    THEN action = maintain_green(30)
+
+  RULE 17:
+    IF weather_condition = heavy_rain AND pedestrian_presence = yes
+       AND current_traffic_light = red
+    THEN action = extend_red(25)
+
+
+=============================================================
+INFERENCE ENGINE (Forward Chaining)
+=============================================================
+
+PROCEDURE forward_chaining(input_facts):
+    activated_rules = empty_list
+    working_memory  = input_facts
+
+    REPEAT
+        new_activations = FALSE
+
+        FOR EACH rule IN knowledge_base:
+            IF rule.conditions_match(working_memory) AND rule NOT IN activated_rules:
+                ADD rule TO activated_rules
+                new_activations = TRUE
+
+                action = rule.execute()
+                working_memory.add(action_result)
+
+                IF action IS decisive_signal_action:
+                    RETURN action   // Stop after first decisive control action
+                END IF
+            END IF
+        END FOR
+
+    UNTIL new_activations = FALSE
+
+    RETURN default_action(maintain_current_light)
+END PROCEDURE
+
+
+=============================================================
+MAIN CONTROL LOOP
+=============================================================
+
+PROGRAM adaptive_traffic_control:
+    INITIALIZE system with DEFAULT_GREEN, DEFAULT_YELLOW, DEFAULT_RED
+
+    LOOP indefinitely:
+        // Get current sensor/user inputs
+        inputs = collect_sensor_data()
+
+        // Apply forward chaining to determine action
+        control_action = forward_chaining(inputs)
+
+        // Execute the determined action
+        execute_signal_action(control_action)
+
+        // Wait before next evaluation cycle
+        wait(1 second)
+    END LOOP
+END PROGRAM
+
+
+=============================================================
+REASONING METHOD
+=============================================================
+
+Forward Chaining:
+  - System starts with user-provided input conditions
+  - Evaluates all production rules in sequence
+  - When rule conditions match current inputs, corresponding action is triggered
+  - Multiple rules may be activated if conditions are satisfied
+  - Dynamic decision-making reflecting real-time conditions
+
+
+=============================================================
+NOTES FOR PROGRAMMERS
+=============================================================
+
+Rule Priority:
+  In cases where multiple matching rules apply, the system executes the first
+  decisive control action found. Actions that change or extend signal timing
+  take precedence over warnings.
+
+Timing Values:
+  All timing values (in seconds) are configurable constants used for testing.
+
+Extensibility:
+  New rules can be added without modifying the inference engine.
