@@ -16,54 +16,54 @@ def get_choice(prompt, options):
             choice = int(input("  Enter choice number: ").strip())
             if 1 <= choice <= len(options):
                 selected = options[choice - 1]
-                print(f"  ✔ Selected: {selected}\n")
+                print(f"Selected: {selected}\n")
                 return selected
         except ValueError:
             pass
-        print(f"  ⚠ Invalid input. Please enter a number between 1 and {len(options)}.")
+        print(f"Invalid input. Please enter a number between 1 and {len(options)}.")
 
 
 def collect_inputs():
     display_banner()
     print("Please provide the current intersection conditions:\n")
 
-    # --- 1. Weather Condition ---
+    #  1. Weather Condition
     weather_condition = get_choice(
         "1. Weather Condition:",
         ["Dry", "Light Rain", "Heavy Rain", "Cloudy"]
     )
 
-    # --- 2. Traffic Density ---
+    #  2. Traffic Density
     traffic_density = get_choice(
         "2. Traffic Density:",
         ["Low", "Medium", "High"]
     )
 
-    # --- 3. Time of Day ---
+    # 3. Time of Day 
     time_of_day = get_choice(
         "3. Time of Day:",
         ["Day", "Night"]
     )
 
-    # --- 4. Pedestrian Presence ---
+    # 4. Pedestrian Presence 
     pedestrian_presence = get_choice(
         "4. Pedestrian Presence:",
         ["Yes", "No"]
     )
 
-    # --- 5. Emergency Vehicle Presence ---
+    #  5. Emergency Vehicle Presence =
     emergency_vehicle_presence = get_choice(
         "5. Emergency Vehicle Presence:",
         ["Yes", "No"]
     )
 
-    # --- 6. Current Traffic Light ---
+    #  6. Current Traffic Light
     current_traffic_light = get_choice(
         "6. Current Traffic Light State:",
         ["Red", "Yellow", "Green"]
     )
 
-    # --- Build and return the inputs dictionary ---
+    #  Build and return the inputs dictionary
     inputs = {
         "weather_condition":            weather_condition,
         "traffic_density":              traffic_density,
@@ -78,7 +78,7 @@ def collect_inputs():
 
 def display_summary(inputs):
     print("=" * 60)
-    print("  INPUT SUMMARY")
+    print("INPUT SUMMARY")
     print("=" * 60)
     for key, value in inputs.items():
         label = key.replace("_", " ").title()
