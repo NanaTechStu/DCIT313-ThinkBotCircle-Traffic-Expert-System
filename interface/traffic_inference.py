@@ -1,3 +1,17 @@
+#The traffic inference module connects Python to Prolog and evaluates the traffic situation using rule-based reasoning.
+#What this file does
+
+#This file is the reasoning engine of the system.
+
+#It:
+ #1. Takes user inputs
+ #2. Sends them to Prolog
+ #3. Uses rules from the knowledge base
+ #4. Returns a traffic signal recommendation
+
+#It uses the Python library pyswip to communicate with Prolog.
+
+
 from pyswip import Prolog
 prolog = Prolog()
 prolog.consult("../knowledge_base/traffic_rules.pl")  

@@ -1,3 +1,10 @@
+#The input collection module gathers information about the traffic environment such as weather conditions, traffic density, pedestrian presence, and emergency vehicles.
+#Main responsibilities:
+ #• Displays the system banner
+ #• Shows menu options
+ #• Lets the user choose traffic conditions
+ #• Stores the inputs in a dictionary
+
 def display_banner():
     print("=" * 60)
     print("  ADAPTIVE TRAFFIC SIGNAL CONTROL - EXPERT SYSTEM")

@@ -5,6 +5,15 @@
 % DCIT 313 – Expert Systems Project
 % ============================================================
 
+#The Prolog file contains the knowledge base and rules that control the behavior of the traffic signals.
+#This file contains the rules and knowledge about how traffic signals behave.
+
+#What it does:
+ #• Stores facts and rules about traffic lights.
+ #• Determines when lights should change (red, yellow, green).
+ #• Applies logical reasoning to traffic situations.
+
+
 % ── Declare dynamic predicates so Python can assert/retract facts
 :- dynamic traffic_density/1.
 :- dynamic current_light/1.

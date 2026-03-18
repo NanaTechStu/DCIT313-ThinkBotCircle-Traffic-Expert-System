@@ -9,6 +9,14 @@ HOW TO INSTALL (run once in your terminal):
 1. Install SWI-Prolog → https://www.swi-prolog.org/Download.html
 2. pip install pyswip
 """
+#The Python interface connects the user to the traffic control logic. It sends requests to the Prolog system and returns the results so they can be displayed or used by the application.
+#This file acts as the bridge between the user and the traffic logic system.
+
+#What it does:
+ #• Takes input or commands from the user or program.
+ #• Sends queries to the Prolog traffic logic file.
+ #• Receives the results from Prolog.
+ #• Displays or processes the output.
 
 from pyswip import Prolog
 import os
