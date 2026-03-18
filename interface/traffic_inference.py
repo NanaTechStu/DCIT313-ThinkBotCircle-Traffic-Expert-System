@@ -16,6 +16,9 @@ from pyswip import Prolog
 prolog = Prolog()
 prolog.consult("../knowledge_base/traffic_rules.pl")  
 
+#Input Helper
+# Displays a numbered menu and loops until the user picks a valid option.
+# Returns the selected option as a plain string (e.g. "high", "yes")
 def ask(question, options):
     print(f"\n{question}")
     for i, opt in enumerate(options, 1):
@@ -26,6 +29,9 @@ def ask(question, options):
             return options[int(choice) - 1]
         print("  Please enter a valid number.")
 
+#Scenario Collector
+#Walks the user through 6 questions to capture all the input
+#-conditions the prolog KB needs to fire the right rules.
 def get_inputs():
     print("\n" + "="*50)
     print(" Welcome to the Adaptive Traffic Signal Control Expert System ")
@@ -41,6 +47,9 @@ def get_inputs():
 
     return density, weather, time_, light, pedestrian, emergency
 
+#INFERENCE ENGINE CALLER
+#Bulds a prolog query string from the 6 imputs and fires it aagaints the KB.
+#Prints each recommended action returned in the descriptions list, or a fallback message if no rule matched. 
 def run_query(density, weather, time_, light, pedestrian, emergency):
     query = (
         f"evaluate({density}, {weather}, {time_}, "
@@ -62,6 +71,8 @@ def run_query(density, weather, time_, light, pedestrian, emergency):
 
     print("-"*55)
 
+#MAIN LOOP
+# Repeatedly collects a scenario and runs inference until the user chooses to exit.
 def main():
     while True:
         inputs = get_inputs()
