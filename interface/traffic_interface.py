@@ -29,6 +29,8 @@ prolog.consult(KB_PATH)
 # ════════════════════════════════════════════════════════════
 # SECTION 1 — RULE EXPLANATION LIBRARY
 # Every rule from the KB has a plain-English explanation.
+# Maps each rule ID to a plain-English description of why it fired
+# Used later by format_output() to explain decisions to the user
 # ════════════════════════════════════════════════════════════
 RULE_EXPLANATIONS = {
     "rule_1": "Rule 1 fired because: Current light is GREEN and traffic density is LOW. "
@@ -94,6 +96,8 @@ ACTION_DISPLAY = {
 
 # ════════════════════════════════════════════════════════════
 # SECTION 2 — OUTPUT FORMATTER
+# Handles parsing Prolog action terms and printing structured, 
+# human-readable decision boxes to the console.
 # ════════════════════════════════════════════════════════════
 
 def parse_action(action_term):
@@ -129,6 +133,7 @@ def format_output(inputs, action_term, rule_key):
             lines_out.append(line)
         return lines_out
 
+# Print the full formatted decision block: inputs, action, rule and explanation
     print("\n" + "═" * W)
     print(" ADAPTIVE TRAFFIC SIGNAL — DECISION OUTPUT")
     print("═" * W)
@@ -176,6 +181,8 @@ def query_signal(inputs: dict):
 
 # ════════════════════════════════════════════════════════════
 # SECTION 3 — INTERACTIVE DEMO
+# Runs three hand-picked scenarios to showcase key system behaviours:
+# emergency override, worst-case weather/traffic, and pesdestrian safety.
 # ════════════════════════════════════════════════════════════
 
 def run_demo():
@@ -191,6 +198,8 @@ def run_demo():
 
 # ════════════════════════════════════════════════════════════
 # SECTION 4 — TEST SCENARIOS
+# Runs 8 targeted unit tests, each  verifying that a specific rule
+# produces the correct action. Prints a pass/fail summary at the end.
 # ════════════════════════════════════════════════════════════
 
 def run_tests():
@@ -198,6 +207,7 @@ def run_tests():
     log = []
 
     def test(name, inputs, expected_action, expected_rule):
+        #asserts inputs, queries the KB, and checks the result against expectations.
         nonlocal passed, failed
         facts = []
         for key, value in inputs.items():
@@ -227,6 +237,7 @@ def run_tests():
             print(f" Expected rule : {expected_rule}")
             print(f" Got rule : {got_rule}")
 
+# one test per rule being verified - covers safety, weather pesdestrian and emergency cases.
     # Define all 8 test scenarios
     test("Rule 3 | Yellow light → switch_to_red", {"current_light": "yellow"}, "switch_to_red", "rule_3")
     test("Rule 6 | High traffic + Red → switch_to_green", {"traffic_density": "high", "current_light": "red"}, "switch_to_green", "rule_6")
@@ -238,6 +249,7 @@ def run_tests():
     test("Rule 20 | Heavy rain + Pedestrians + Red → extend_red(25)", {"weather": "heavy_rain", "pedestrian_presence": "yes", "current_light": "red"}, "extend_red(25)", "rule_20")
 
     # Summary
+    # print the final pass/fail tally and a per-test status log
     print("\n" + "═" * 62)
     print(f" RESULTS: {passed} passed {failed} failed 8 total")
     print("═" * 62)
@@ -247,6 +259,8 @@ def run_tests():
 
 # ════════════════════════════════════════════════════════════
 # ENTRY POINT
+# Runs the demo first to show xample decisions, then the test
+# suite to verify all rules behave as expected.
 # ════════════════════════════════════════════════════════════
 if __name__ == "__main__":
     run_demo()
