@@ -14,7 +14,7 @@ def ask(question, options):
 
 def get_inputs():
     print("\n" + "="*50)
-    print(" Welcome to the Traffic Signal Expert System ")
+    print(" Welcome to the Adaptive Traffic Signal Expert System ")
     print("  Built by ThinkBot Circle- DCIT 313")
     print("="*50)
 
