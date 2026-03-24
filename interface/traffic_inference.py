@@ -1,3 +1,10 @@
+"""
+EXPERT SYSTEM: Adaptive Traffic Signal Control
+File: interface/traffic_inference.py
+Author: Aryee Emerald-Inference Engine
+Knowledge Base by: Bilson Priscilla Essirifua
+DCIT 313 – Expert Systems Project
+"""
 #The traffic inference module connects Python to Prolog and evaluates the traffic situation using rule-based reasoning.
 #What this file does
 
